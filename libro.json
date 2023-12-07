@@ -1,0 +1,9 @@
+{
+  "libro": {
+    "capitoli": ["Introduzione", "Dati", "FileCSV", "JSON"],
+    "autore": {
+      "Nome": "Epicode",
+      "Indirizzo": "Via Dei Magazzini Generali 16"
+    }
+  }
+}

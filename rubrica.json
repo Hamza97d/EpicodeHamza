@@ -1,0 +1,47 @@
+{
+  "rubrica1": {
+    "Title": "Sir",
+    "First_Name": "Alessio",
+    "Middle_Name": "Pier",
+    "Last_Name": "Rivi",
+    "Mobile_Phone": "326598462",
+    "Email_Address": "Pierpier@gmail.com",
+    "Hobby": "cantare"
+  },
+  "rubrica2": {
+    "Title": "Sir.ra",
+    "First_Name": "Jessy",
+    "Middle_Name": "Margo",
+    "Last_Name": "Tunner",
+    "Mobile_Phone": "325698716",
+    "Email_Address": "Margot@gmail.com",
+    "Hobby": "Scultura"
+  },
+  "rubrica3": {
+    "Title": "Sir.ra",
+    "First_Name": "Fatima",
+    "Middle_Name": "Agueni",
+    "Last_Name": "Orafa",
+    "Mobile_Phone": "325165665",
+    "Email_Address": "Aguebi@hotmail.it",
+    "Hobby": "Calcio"
+  },
+  "rubrica4": {
+    "Title": "Sir",
+    "First_Name": "Omar",
+    "Middle_Name": "Kante",
+    "Last_Name": "Diof",
+    "Mobile_Phone": "365956498",
+    "Email_Address": "Aguebi@hotmail.it",
+    "Hobby": "Basket"
+  },
+  "rubrica5": {
+    "Title": "Sir",
+    "First_Name": "Hamza",
+    "Middle_Name": "",
+    "Last_Name": "Mahmoudi",
+    "Mobile_Phone": "351754909",
+    "Email_Address": "Hamza97d@hotmail.com",
+    "Hobby": "Camminare"
+  }
+}

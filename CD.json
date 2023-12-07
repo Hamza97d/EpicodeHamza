@@ -1,0 +1,14 @@
+{
+	"In_My_Mind": {
+	  "Casa_discografica": "Virgin",
+	  "Artista": "Pharrell Williams",
+	  "Anno_pubblicazione": 2006,
+	  "Categoria_musicale": "Hip Hop",
+	  "Tracce_musicali":[
+	  {"numero": "1", "nome": "Can I have it like that", "durata": 3.55}, 
+	  {"numero": "2,", "nome": "Best Friend", "durata": 4.40}, 
+	  {"numero": "3", "nome": "You Can Do It To", "durata": 5.22},
+	  {"numero": "4", "nome": "Keep It Playa", "durata": 4.18}
+	  ] 
+	}
+}
