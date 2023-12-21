@@ -1,0 +1,283 @@
+
+
+USE album2
+
+CREATE TABLE DISCO (     NroSerie INT PRIMARY KEY,     TitoloAlbum VARCHAR(255),     Anno DATE,     Prezzo DECIMAL(10, 2) )
+
+CREATE TABLE CONTIENE (     NroSerieDisco INT,     CodiceReg INT,     NroProg INT,     PRIMARY KEY (NroSerieDisco, CodiceReg, NroProg),     FOREIGN KEY (NroSerieDisco) REFERENCES DISCO(NroSerie),     FOREIGN KEY (CodiceReg) REFERENCES ESECUZIONE(CodiceReg) )
+
+USE album2
+
+CREATE TABLE ESECUZIONE (     CodiceReg INT PRIMARY KEY,     TitoloCanz VARCHAR(255),     Anno DATE )
+
+USE album2
+
+CREATE TABLE CONTIENE (     NroSerieDisco INT,     CodiceReg INT,     NroProg INT,     PRIMARY KEY (NroSerieDisco, CodiceReg, NroProg),     FOREIGN KEY (NroSerieDisco) REFERENCES DISCO(NroSerie),     FOREIGN KEY (CodiceReg) REFERENCES ESECUZIONE(CodiceReg) )
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255),     PRIMARY KEY (Nome, TitoloCanzone),     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanz) )
+
+USE album2
+
+CREATE TABLE CANTANTE (     NomeCantante VARCHAR(255),     CodiceReg INT,     PRIMARY KEY (NomeCantante, CodiceReg),     FOREIGN KEY (CodiceReg) REFERENCES ESECUZIONE(CodiceReg) )
+
+USE album2
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255),     PRIMARY KEY (Nome, TitoloCanzone),     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanz) )
+
+USE album2
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255),     PRIMARY KEY (Nome, TitoloCanzone),     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanzone) )
+
+USE album2
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255),     PRIMARY KEY (TitoloCanzone),     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanz) )
+
+DROP TABLE `album2`.`esecuzione`
+
+DROP TABLE `album2`.`esecuzione`
+
+USE album2
+
+CREATE TABLE ESECUZIONE (     CodiceReg INT PRIMARY KEY AUTO_INCREMENT,     TitoloCanz VARCHAR(255),     Anno DATE )
+
+USE album2
+
+DROP TABLE esecuzione
+
+USE album2
+
+ALTER TABLE CONTIENE DROP FOREIGN KEY contiene_ibfk_2
+
+DROP TABLE ESECUZIONE
+
+ALTER TABLE CANTANTE DROP FOREIGN KEY cantante_ibfk_1
+
+ALTER TABLE CONTIENE DROP FOREIGN KEY contiene_ibfk_2
+
+SELECT * FROM album2.contiene LIMIT 0, 1000
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`cantante`
+
+DROP TABLE `album2`.`disco`
+
+DROP TABLE `album2`.`esecuzione`
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`contiene`
+
+DROP TABLE `album2`.`contiene`
+
+USE album2
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE DISCO (     NroSerie INT PRIMARY KEY,     TitoloAlbum VARCHAR(255),     Anno DATE,     Prezzo DECIMAL(10, 2) )
+
+CREATE TABLE ESECUZIONE (     CodiceReg INT PRIMARY KEY,     TitoloCanz VARCHAR(255),     Anno DATE )
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE CONTIENE (     NroSerieDisco INT,     CodiceReg INT,     NroProg INT,     PRIMARY KEY (NroSerieDisco, CodiceReg, NroProg),     FOREIGN KEY (NroSerieDisco) REFERENCES DISCO(NroSerie),     FOREIGN KEY (CodiceReg) REFERENCES ESECUZIONE(CodiceReg) )
+
+CREATE TABLE CANTANTE (     NomeCantante VARCHAR(255),     CodiceReg INT,     PRIMARY KEY (NomeCantante, CodiceReg),     FOREIGN KEY (CodiceReg) REFERENCES ESECUZIONE(CodiceReg) )
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255),     PRIMARY KEY (TitoloCanzone),     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanz) )
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE ESECUZIONE (     CodiceReg INT PRIMARY KEY AUTO_INCREMENT,     TitoloCanz VARCHAR(255),     Anno DATE )
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255) PRIMARY KEY,     FOREIGN KEY (TitoloCanzone) REFERENCES ESECUZIONE(TitoloCanz) )
+
+SET SQL_SAFE_UPDATES = 0
+
+CREATE TABLE AUTORE (     Nome VARCHAR(255),     TitoloCanzone VARCHAR(255) PRIMARY KEY )
+
+SET SQL_SAFE_UPDATES = 0
+
+INSERT INTO DISCO (NroSerie, TitoloAlbum, Anno, Prezzo) VALUES (1200, 'Break It', '2020-01-20', 19.99), (1201, 'Move On', '2021-01-21', 15.99), (1202, 'I dont Know', '2022-01-22', 24.99)
+
+INSERT INTO ESECUZIONE (CodiceReg, TitoloCanz, Anno) VALUES (120, 'I belived in you', '2020-01-20'), (121, 'I learn by you', '2021-01-21'), (122, 'The white wolf', '2022-01-22')
+
+INSERT INTO AUTORE (Nome, TitoloCanzone) VALUES ('Johny Fire', 'I belived in you'), ('Michel Farson', 'I learn by you'), ('Peter Move', 'The white wolf')
+
+INSERT INTO CANTANTE (NomeCantante, CodiceReg) VALUES ('Johny Fire', 120), ('Michel Farson', 121), ('Peter Move', 122)
+
+INSERT INTO CONTIENE (NroSerieDisco, CodiceReg, NroProg) VALUES (1200, 120, 1), (1201, 121, 2), (1202, 122, 3)
+
+INSERT INTO DISCO (NroSerie, TitoloAlbum, Anno, Prezzo) VALUES (1203, 'New Beginnings', '2023-01-23', 29.99), (1204, 'Echoes', '2022-02-24', 18.99), (1205, 'Rhythmic Dreams', '2021-03-25', 21.99)
+
+INSERT INTO ESECUZIONE (CodiceReg, TitoloCanz, Anno) VALUES (123, 'Sound of Silence', '2023-01-23'), (124, 'Midnight Symphony', '2022-02-24'), (125, 'Harmony Falls', '2021-03-25')
+
+INSERT INTO AUTORE (Nome, TitoloCanzone) VALUES ('Sarah Harmony', 'Sound of Silence'), ('Michael Echo', 'Midnight Symphony'), ('Alex Rhythm', 'Harmony Falls')
+
+INSERT INTO CANTANTE (NomeCantante, CodiceReg) VALUES ('Sarah Harmony', 123), ('Michael Echo', 124), ('Alex Rhythm', 125)
+
+INSERT INTO CONTIENE (NroSerieDisco, CodiceReg, NroProg) VALUES (1203, 123, 1), (1204, 124, 1), (1205, 125, 1)
+
+SELECT * FROM album2.cantante LIMIT 0, 1000
+
+DROP DATABASE `album1`
+
+DROP DATABASE `album`
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+INSERT INTO ESECUZIONE (CodiceReg, TitoloCanz, Anno) VALUES (126, 'Dancing in the Moonlight', '2020-05-15'), (127, 'Dawn of a New Day', '2021-08-18'), (128, 'Dreaming Away', '2022-11-25')
+
+INSERT INTO AUTORE (Nome, TitoloCanzone) VALUES ('Alice Singer', 'Dancing in the Moonlight'), ('Bob Composer', 'Dancing in the Moonlight'), ('Charlie Singer', 'Dawn of a New Day'), ('Charlie Composer', 'Dawn of a New Day'), ('David Singer', 'Dreaming Away'), ('David Composer', 'Dreaming Away')
+
+SELECT A.Nome FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz WHERE A.Nome LIKE 'D%'       AND A.Nome IN (SELECT Nome FROM CANTANTE) LIMIT 0, 1000
+
+SELECT DISTINCT D.TitoloAlbum FROM DISCO D JOIN CONTIENE C ON D.NroSerie = C.NroSerieDisco JOIN ESECUZIONE E ON C.CodiceReg = E.CodiceReg WHERE E.Anno IS NULL LIMIT 0, 1000
+
+SELECT DISTINCT C.NomeCantante FROM CANTANTE C LEFT JOIN ESECUZIONE E ON C.CodiceReg = E.CodiceReg LEFT JOIN AUTORE A ON E.TitoloCanz = A.TitoloCanzone WHERE A.Nome IS NULL LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on cantante.NomeCantante= autore.NomeCantante LIMIT 0, 1000
+
+SELECT * FROM autore LIMIT 0, 1000
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+SELECT * FROM autore LIMIT 0, 1000
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+SELECT * FROM autore LIMIT 0, 1000
+
+SELECT DISTINCT A.Nome FROM AUTORE A JOIN CANTANTE C ON A.Nome = C.NomeCantante JOIN ESECUZIONE E ON C.CodiceReg = E.CodiceReg WHERE A.Nome LIKE 'D%' LIMIT 0, 1000
+
+SELECT * FROM album2.cantante LIMIT 0, 1000
+
+SELECT * FROM album2.cantante LIMIT 0, 1000
+
+SELECT A.Nome FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz WHERE A.Nome LIKE 'D%'       AND A.Nome IN (SELECT Nome FROM CANTANTE) LIMIT 0, 1000
+
+SELECT * FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz LIMIT 0, 1000
+
+SELECT * FROM AUTORE LIMIT 0, 1000
+
+SELECT * FROM AUTORE LIMIT 0, 1000
+
+SELECT * FROM AUTORE LIMIT 0, 1000
+
+SELECT A.Nome FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz WHERE A.Nome LIKE 'D%'       AND A.Nome IN (SELECT Nome FROM CANTANTE) LIMIT 0, 1000
+
+SELECT * FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz WHERE A.Nome LIKE 'D%' LIMIT 0, 1000
+
+SELECT * FROM AUTORE A JOIN ESECUZIONE E ON A.TitoloCanzone = E.TitoloCanz WHERE Nome LIKE 'D%' LIMIT 0, 1000
+
+SELECT * FROM AUTORE LIMIT 0, 1000
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+SELECT * FROM autore LIMIT 0, 1000
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+Insert into cantante VALUES("Daria Mat", 126), ("Domber Pak", 127)
+
+SELECT * FROM cantante LIMIT 0, 1000
+
+SELECT * FROM contiene LIMIT 0, 1000
+
+SELECT * FROM contiene LIMIT 0, 1000
+
+insert into contiene values (1206, 126, 2), (1207, 127, 2)
+
+SELECT * FROM disco LIMIT 0, 1000
+
+insert into contiene values (1206, 126, 2), (1207, 127, 2)
+
+select * from cantante LIMIT 0, 1000
+
+select * from autore LIMIT 0, 1000
+
+select * from cantante LIMIT 0, 1000
+
+select * from autore LIMIT 0, 1000
+
+SELECT * FROM disco LIMIT 0, 1000
+
+insert into contiene values (1206, 126, 2), (1207, 127, 2)
+
+select * from cantante LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante LIMIT 0, 1000
+
+SELECT * FROM album2.autore LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante where autore.nome LIKE "D%" LIMIT 0, 1000
+
+SELECT * FROM album2.esecuzione LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante where autore.nome LIKE "D%" LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where autore.nome LIKE "D%" LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where autore.nome LIKE "D%" LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante inner join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where autore.nome LIKE "D%" LIMIT 0, 1000
+
+SELECT * FROM album2.disco LIMIT 0, 1000
+
+UPDATE `album2`.`disco` SET `Anno` = '' WHERE (`NroSerie` = '1203')
+
+UPDATE `album2`.`disco` SET `Anno` = '' WHERE (`NroSerie` = '1201')
+
+UPDATE `album2`.`disco` SET `Anno` = 'NULL' WHERE (`NroSerie` = '1203')
+
+UPDATE `album2`.`disco` SET `Anno` = 'NULL' WHERE (`NroSerie` = '1201')
+
+SELECT * FROM disco LIMIT 0, 1000
+
+UPDATE disco set anno= null where NroSerie = 1201
+
+UPDATE disco set anno= null where NroSerie = 1203
+
+SELECT * FROM esecuzione LIMIT 0, 1000
+
+UPDATE ESECUZIONE set anno= null where NroSerie = 121
+
+UPDATE ESECUZIONE set anno= null where CodiceReg = 121
+
+UPDATE ESECUZIONE set anno= null where CodiceReg = 122
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante inner join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where anno= null LIMIT 0, 1000
+
+SELECT * FROM cantante inner join autore on autore.nome= cantante.nomeCantante inner join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where esecuzione.anno= null LIMIT 0, 1000
+
+SELECT * FROM album2.esecuzione LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg LIMIT 0, 1000
+
+SELECT * FROM album2.disco LIMIT 0, 1000
+
+SELECT * FROM album2.esecuzione where anno= null LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg LIMIT 0, 1000
+
+SELECT * FROM cantante join autore on autore.nome= cantante.nomeCantante join esecuzione on cantante.CodiceReg= esecuzione.CodiceReg where esecuzione.anno is NULL LIMIT 0, 1000
