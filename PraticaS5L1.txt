@@ -1,0 +1,77 @@
+Finestra interattiva di Python 3.9 (64-bit) [PTVS 17.0.23262.1-17.0]
+Digitare $help per un elenco di comandi.
+
+>>> n_studenti= 25
+>>> print("Abbiamo"+ str(n_studenti)+ "studenti")
+Abbiamo25studenti
+
+>>> print("Abbiamo "+ str(n_studenti)+ " studenti")
+Abbiamo 25 studenti
+
+>>> new_students= 3
+>>> n_studenti= n_studenti + new_students
+>>> print("Abbiamo "+ str(n_studenti)+ " studenti")
+Abbiamo 28 studenti
+
+>>> corso= "Epicode"
+>>> print(corso)
+Epicode
+
+>>> L_numeri= [0,1,2,3,4,5]
+>>> print(L_numeri)
+[0, 1, 2, 3, 4, 5]
+
+>>> print(corso[0:3])
+Epi
+
+>>> x=10
+>>> x += 2
+>>> x *= 3
+>>> print(x)
+36
+
+>>> x1=10
+>>> x1= x1 + 2
+>>> x1= x1 * 3
+>>> print(x1)
+36
+>>> nome= input("nome")
+nome
+hamza
+
+>>> print(nome)
+hamza
+
+>>> stringa= input("Digita la stringa")
+Digita la stringa
+Anaconda
+
+>>> print(stringa[0:3]+ "..." + stringa[-3:] )
+Ana...nda
+
+>>> p1= "Windows" 
+>>> p2= "Excel"
+>>> p3= "Powerpoint"
+>>> p4= "Word"
+>>> print("Windows ha la seguente lunghezza: "+ str(len(p1)))
+Windows ha la seguente lunghezza: 7
+>>> print("Excel ha la seguente lunghezza: "+ str(len(p2)))
+Excel ha la seguente lunghezza: 5
+>>> print("Powerpoint ha la seguente lunghezza: "+ str(len(p3)))
+Powerpoint ha la seguente lunghezza: 10
+>>> print("Word ha la seguente lunghezza: "+ str(len(p4)))
+Word ha la seguente lunghezza: 4
+
+
+>>> number1= input("numero 1")
+numero 1
+5
+
+>>> number2= input("numero 2")
+numero 2
+12
+
+>>> somma= int(number1) + int(number2)
+>>> print(somma)
+17
+>>> 
