@@ -1,0 +1,14 @@
+Scivere una piccola relazione, in un nuovo foglio, dove descrivere la struttura dei dati (entità, campi, chiavi primarie, tipologia dei dati, ecc.)
+
+
+Il dataset fornito è composto da 14 colonne e 92.448 righe, dopo aver eseguito un’attenta pulizia dei dati. Ogni riga rappresenta un’unità statistica, mentre le colonne contengono informazioni dettagliate.
+
+Le principali caratteristiche del dataset sono le seguenti:
+
+-Data di Acquisto: Una colonna che registra la data in cui è avvenuto l’acquisto.
+-Tipo di Prodotto: Un’altra colonna che specifica il tipo di prodotto acquistato.
+-Prezzo Totale Effettivo: Una colonna che riporta il prezzo totale effettivo dell’acquisto.
+-Regione: Informazioni sulla regione geografica in cui è avvenuto l’acquisto.
+-Ulteriori Dettagli sul Prodotto: Altre informazioni specifiche relative al prodotto.
+
+La chiave primaria per identificare ciascuna tupla è la combinazione dei valori presenti nelle colonne prod 1 e prod 2.
