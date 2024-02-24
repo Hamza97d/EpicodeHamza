@@ -1,0 +1,120 @@
+---
+title: "Analisi andamento azione"
+output: html_notebook
+---
+<img src="https://techcrunch.com/wp-content/uploads/2012/08/palantir-logok100-01.png" alt="Logo Palantir" width="50%" />
+
+
+```{r}
+library(readr)
+
+url <- "https://github.com/Hamza97d/EpicodeHamza/raw/main/S10L4/PLTR.csv"
+
+
+df_palantir <- read_csv(url)
+print(df_palantir)
+```
+```{r}
+# Carica la libreria
+library(dplyr)
+
+
+
+
+# Media, mediana, deviazione standard, minimo e massimo per il prezzo di chiusura
+Statistica_chiusura <- summarise(df_palantir, 
+                           Media = mean(Close),
+                           Mediana = median(Close),
+                           Deviazione_Standard = sd(Close),
+                           Minimo = min(Close),
+                           Massimo = max(Close))
+
+
+print("Statistiche descrittive per il prezzo di chiusura:")
+print(Statistica_chiusura)
+```
+Visualizzazione del andamento nel tempo del prezzo di chiusura:
+```{r}
+library(ggplot2)
+
+
+# Crea un grafico a linee per il prezzo di chiusura nel tempo
+ggplot(df_palantir, aes(x = Date, y = Close)) +
+  geom_line() +
+  labs(title = "Andamento nel tempo del Prezzo di Chiusura di Palantir",
+       x = "Data",
+       y = "Prezzo di Chiusura")
+```
+```{r}
+library(ggplot2)
+
+
+# Crea un grafico a linee per il prezzo di chiusura nel tempo
+ggplot(df_palantir, aes(x = Date, y = Volume)) +
+  geom_line() +
+  labs(title = "Andamento nel tempo del Volume di Palantir",
+       x = "Data",
+       y = "Volume")
+```
+```{r}
+library(dplyr)
+
+# Media, mediana, deviazione standard, minimo e massimo per il volume azione
+Statistica_volume <- summarise(df_palantir, 
+                           Media = mean(Volume),
+                           Mediana = median(Volume),
+                           Deviazione_Standard = sd(Volume),
+                           Minimo = min(Volume),
+                           Massimo = max(Volume))
+
+
+print("Statistiche descrittive per volume azione Palantir:")
+print(Statistica_volume)
+```
+```{r}
+
+# Calcola la correlazione tra il volume e il prezzo di chiusura
+correlation <- cor(df_palantir$Volume, df_palantir$Close, use = "complete.obs")
+
+# Stampa la correlazione
+print(paste("Correlazione tra Volume e Prezzo di Chiusura:", correlation))
+```
+```{r}
+library(ggplot2)
+# Crea un grafico di dispersione
+ggplot(df_palantir, aes(x = Volume, y = Close)) +
+  geom_point() +
+  labs(title = "Correlazione tra Volume e Prezzo di Chiusura",
+       x = "Volume",
+       y = "Prezzo di Chiusura")
+```
+```{r}
+# Carica la libreria
+library(forecast)
+library(ggplot2)
+
+# Assume che il tuo dataframe sia già stato caricato e si chiami 'df_palantir'
+# Se hai un dataframe diverso, sostituisci 'df_palantir' con il nome effettivo del tuo dataframe
+
+# Converti la colonna 'Date' in tipo di dato data
+df_palantir$Date <- as.Date(df_palantir$Date)
+
+# Crea una serie temporale
+time_series <- ts(df_palantir$Close, frequency = 1)
+
+# Addestra un modello ARIMA
+arima_model <- auto.arima(time_series)
+
+# Fai una previsione futura (ad esempio, 30 giorni)
+forecast_result <- forecast(arima_model, h = 20)
+
+# Visualizza il grafico delle previsioni
+autoplot(forecast_result) +
+  labs(title = "Previsione dei Prezzi con Modello ARIMA",
+       x = "Data",
+       y = "Prezzo di Chiusura")
+```
+
+### Grazie!
+### Hamza Mahmoudi
+
