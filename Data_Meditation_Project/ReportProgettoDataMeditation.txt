@@ -1,0 +1,25 @@
+# DataMeditation Dashboard - Analisi dell'Uso del Browser 💻
+
+
+## Descrizione:
+
+Benvenuti nel mio progetto di DataMeditation Dashboard, un'analisi dettagliata del mio utilizzo del browser nel periodo dal primo dicembre fino alla fine di marzo. Per rendere l'esperienza più accessibile, ho creato una dashboard interattiva utilizzando Looker Studio. 
+
+Puoi visualizzare la dashboard qui: https://lookerstudio.google.com/reporting/acd85a83-ac2b-45a5-bb0f-af3e431b2134
+
+##🎯 Metodologia:
+Per condurre questa analisi, ho effettuato uno scraping della mia cronologia Internet e sylabus di epicode. Successivamente, ho eseguito una pulizia approfondita del dataset per garantire la privacy e una rappresentazione accurata dei dati. Ho utilizzato principalmente Power Query per questa fase, eliminando informazioni sensibili e categorizzando i siti visitati in due principali categorie: Intrattenimento e Apprendimento.
+
+Intrattenimento: Siti di svago e intrattenimento nel browser.
+Apprendimento: Siti utilizzati per l'apprendimento di concetti didattici.
+
+## Sfide Affrontate:
+Durante il processo, ho incontrato alcune sfide significative. La diversità degli URL ha richiesto uno sforzo considerevole nella pulizia e nell'analisi dei dati. Inoltre, problemi con le risorse IT hanno causato interruzioni nel programma Python, limitando il tempo disponibile per le analisi.
+
+## Limitazioni e Focus Attuale:
+A causa delle sfide incontrate, ho potuto includere nella dashboard solo una parte delle analisi originariamente pianificate. Tuttavia, l'analisi effettuata ha fornito interessanti insights su come ho utilizzato il computer, evidenziando un'attenzione prevalente all'apprendimento.
+
+## Risorse Aggiuntive:
+Link dataset uso internet: https://www.kaggle.com/code/tumpanjawat/internet-use-geo-cluster-time-series
+
+Grazie e buona esplorazione! 🚀
